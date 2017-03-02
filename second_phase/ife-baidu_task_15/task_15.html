@@ -40,10 +40,9 @@ function getData() {
   for (var i = 0; i < originlist.length; i++) {
     var city = originlist[i].innerText.match(/(.*?)空气/)[1];
     var num = originlist[i].getElementsByTagName('b')[0].innerText;
-    data[i]=[];
     data[i].push(city);
     data[i].push(num);
-    /*data.push([city[i],num[i]]);*/
+    /*data.push([city,numw]);*/
   }
   /*data = [
     ["北京", 90],
@@ -59,10 +58,9 @@ function getData() {
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-  data.sort(function(a,b){
+  return data.sort(function(a,b){
     return b[1] - a[1];
-  });
-  return data;
+  })
 }
 
 /**
